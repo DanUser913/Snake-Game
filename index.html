@@ -16,23 +16,14 @@
     </div>
 
     <script>
+        function playBackgroundMusic() {
+            const backgroundMusic = new Audio('audio/theme.mp3');
+            backgroundMusic.loop = true;
+            backgroundMusic.play();
+        }
+
         document.addEventListener("DOMContentLoaded", function() {
-            var audioUrl = "audio/theme.mp3";
-            var audio = new Audio();
-
-            var xhr = new XMLHttpRequest();
-            xhr.open('GET', audioUrl, true);
-            xhr.responseType = 'arraybuffer';
-
-            xhr.onload = function () {
-                var blob = new Blob([xhr.response], { type: 'audio/mp3' });
-                var blobUrl = URL.createObjectURL(blob);
-                audio.src = blobUrl;
-                audio.loop = true;
-                audio.play();
-            };
-
-            xhr.send();
+            playBackgroundMusic();
         });
     </script>
 </body>
