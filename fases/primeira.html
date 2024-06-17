@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo da Cobrinha</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="game-container">
+        <div id="snake" class="snake"></div>
+        <div id="food" class="food"></div>
+    </div>
+    <div id="score-display">Pontuação: <span id="score">0</span></div>
+    
+    <div id="controls">
+        <button onclick="changeDirection('up')">⬆️</button>
+        <div>
+            <button onclick="changeDirection('left')">⬅️</button>
+            <button onclick="changeDirection('right')">➡️</button>
+        </div>
+        <button onclick="changeDirection('down')">⬇️</button>
+    </div>
+    <div id="game-over" class="game-over hidden">
+        <p>Fim de Jogo</p>
+        <p>Pontuação: <span id="final-score">0</span></p>
+        <button onclick="restartGame()">Jogar Novamente</button>
+    </div>
+    <p>©️ Daniel Lucena</p>
+    <script src="script.js"></script>
+</body>
+</html>

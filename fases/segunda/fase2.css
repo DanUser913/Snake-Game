@@ -1,0 +1,135 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #000;
+    font-family: Arial, sans-serif;
+    color: #fff;
+  }
+  
+  p {
+    color: #72706A;
+  }
+  
+  #game-container {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    height: 600px;
+    border: 1px solid #333;
+    background-color: #222;
+    overflow: hidden;
+  }
+  
+  .snake, .food {
+    position: absolute;
+    width: calc(100% / 30);
+    height: calc(100% / 30);
+  }
+  
+  .snake {
+    border-radius: 4px;
+    background-color: #D49610;
+  }
+  
+  .food {
+    border-radius: 50%;
+    background-color: #39da54;
+  }
+  
+  #score-display {
+    margin-top: 10px;
+    font-size: 24px;
+    color: #FFF;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 5px 10px;
+    border-radius: 5px;
+  }
+  
+  #game-over {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    color: #FFF;
+    border-radius: 10px;
+    border: 2px solid #D49610;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    animation: gameover-animation 1s ease-in-out infinite;
+  }
+  
+  @keyframes gameover-animation {
+    0% { transform: translate(-50%, -50%) scale(1); }
+    50% { transform: translate(-50%, -50%) scale(1.1); }
+    100% { transform: translate(-50%, -50%) scale(1); }
+  }
+  
+  #game-over p {
+    margin: 10px 0;
+    font-size: 24px;
+  }
+  
+  #game-over.hidden {
+    display: none;
+  }
+  
+  #controls {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  #controls > div {
+    display: flex;
+  }
+  
+  button {
+    margin: 5px;
+    padding: 10px 20px;
+    background-color: #2c7700;
+    color: #FFF;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #116906;
+  }
+  
+  
+  @media (max-width: 800px) {
+    #controls {
+      display: flex;
+    }
+  }
+  
+  @media (max-width: 600px) {
+    #game-container {
+      width: 90%;
+      height: 100%;
+    }
+  }
+  
+  @media (max-width: 531px) {
+    #controls {
+      display: flex;
+    }
+  }
+  
+  .obstacle {
+    position: absolute;
+    width: calc(100% / 30);
+    height: calc(100% / 30);
+    background-color: red;
+    border: 1px solid white;
+  }
+  
