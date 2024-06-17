@@ -7,11 +7,6 @@
     <link rel="stylesheet" href="inicio.css">
 </head>
 <body>
-    <audio id="audio" autoplay>
-        <source src="audio/theme.mp3" type="audio/mp3">
-        Seu navegador não suporta a tag de áudio.
-    </audio>
-
     <div class="container">
         <h1>A cobrinha</h1>
         <p>Clique no botão abaixo para começar a jogar</p>
@@ -21,10 +16,23 @@
     </div>
 
     <script>
-        var audio = document.getElementById("audio");
+        document.addEventListener("DOMContentLoaded", function() {
+            var audioUrl = "audio/theme.mp3";
+            var audio = new Audio();
 
-        audio.addEventListener("ended", function() {
-            audio.play();
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET', audioUrl, true);
+            xhr.responseType = 'arraybuffer';
+
+            xhr.onload = function () {
+                var blob = new Blob([xhr.response], { type: 'audio/mp3' });
+                var blobUrl = URL.createObjectURL(blob);
+                audio.src = blobUrl;
+                audio.loop = true; // Define o áudio para loop
+                audio.play(); // Inicia a reprodução do áudio
+            };
+
+            xhr.send();
         });
     </script>
 </body>
