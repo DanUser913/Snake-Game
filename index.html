@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="inicio.css">
 </head>
 <body>
-    <audio autoplay loop>
+    <audio id="audio" autoplay>
         <source src="audio/theme.mp3" type="audio/mp3">
         Seu navegador não suporta a tag de áudio.
     </audio>
@@ -20,5 +20,12 @@
         <p>©️ Daniel Lucena</p>
     </div>
 
+    <script>
+        var audio = document.getElementById("audio");
+
+        audio.addEventListener("ended", function() {
+            audio.play();
+        });
+    </script>
 </body>
 </html>
