@@ -28,8 +28,8 @@
                 var blob = new Blob([xhr.response], { type: 'audio/mp3' });
                 var blobUrl = URL.createObjectURL(blob);
                 audio.src = blobUrl;
-                audio.loop = true; // Define o áudio para loop
-                audio.play(); // Inicia a reprodução do áudio
+                audio.loop = true;
+                audio.play();
             };
 
             xhr.send();
