@@ -5,5 +5,5 @@ https://snake-game-phi-beryl.vercel.app/
 <br>
 Use as teclas de setas para controlar a cobrinha.
 
-**Se esbarrar nas laterais do container a cobrinha morre, E quando chega na pontuação 5 vai para a outra fase**
+**Se esbarrar nas laterais do container a cobrinha morre, E quando chega na pontuação 5 vai para a segunda fase.**
 
